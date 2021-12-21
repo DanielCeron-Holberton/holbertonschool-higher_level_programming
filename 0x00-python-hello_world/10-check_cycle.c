@@ -7,14 +7,14 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *temp = list;
+	/*listint_t *temp = list;*/
 
 	if(list == NULL || list->next == NULL)
 		return(0);
 
 	while (list != NULL && list->next != NULL)
 	{
-		if (list->next >= temp)
+		if (list->next >= list)
 			break;
 		list = list->next;
 	}
