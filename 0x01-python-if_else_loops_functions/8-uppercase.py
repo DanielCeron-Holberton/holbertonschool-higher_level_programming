@@ -6,4 +6,5 @@ def uppercase(str):
             ascii_char -= 32
         if i < len(str) - 1:
             print("{:c}".format(ascii_char), end="")
-    print("{:c}".format(ascii_char))
+        else:
+            print("{:c}".format(ascii_char))
