@@ -14,6 +14,9 @@ int is_palindrome(listint_t **head)
 	listint_t *current;
 	int sum = 0;
 
+	if (!head)
+		return (0);
+
 	current = *head;
 
 	while (current->next != NULL)
@@ -35,5 +38,9 @@ int is_palindrome(listint_t **head)
 	}
 	if (sum == 0)
 		return (1);
+	else
+		return(0);
+
+	
 	return (0);
 }
