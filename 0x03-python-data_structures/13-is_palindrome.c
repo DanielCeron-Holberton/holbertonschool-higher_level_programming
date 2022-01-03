@@ -14,11 +14,15 @@ int is_palindrome(listint_t **head)
 	listint_t *current;
 	int sum = 0;
 
-	
 	if (*head == NULL)
-		return(0);
-	
+		return (0);
+
 	current = *head;
+	if (current->next == NULL)
+	{
+		return (0);
+	}
+	
 
 	while (current->next != NULL)
 	{
@@ -40,8 +44,7 @@ int is_palindrome(listint_t **head)
 	if (sum == 0)
 		return (1);
 	else
-		return(0);
+		return (0);
 
-	
 	return (0);
 }
