@@ -12,43 +12,33 @@
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *current, *temp;
-	int sum[4096];
-	int i = 0, size_array = 0, pair = 0;
+	listint_t *current;
+	int sum = 0;
 
 	if (head == NULL || *head == NULL)
 		return (1);
+
 	current = *head;
-	temp = *head;
-	while (temp->next != NULL)
+
+	while (current->next != NULL)
 	{
-		size_array++;
-		temp = temp->next;
-	}
-	i = 0;
-	while (current != NULL)
-	{
-		sum[i] = current->n;
-		i++;
+		if (current->n != current->next->n)
+			sum += current->n;
+		else
+		{
+			sum += current->n;
+			break;
+		}
 		current = current->next;
 	}
-	pair = (size_array / 2) + 1;
-	if (size_array % 2 != 0)
+
+	while (current->next != NULL)
 	{
-		for (i = 0; pair >= 0; i++, size_array--, pair--)
-		{
-			if (sum[i] != sum[size_array])
-				return (0);
-		}
+		current = current->next;
+		sum -= current->n;
 	}
-	else
-	{
-		while (i != size_array)
-		{
-			if (sum[i] != sum[size_array])
-				return (0);
-			i++, size_array--;
-		}
-	}
-	return (1);
+	if (sum == 0)
+		return (1);
+
+	return (0);
 }
