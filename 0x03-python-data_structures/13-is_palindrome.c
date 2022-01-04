@@ -17,7 +17,7 @@ int is_palindrome(listint_t **head)
 	int i = 0, size_array = 0, pair = 0;
 
 	if (head == NULL || *head == NULL)
-		return (0);
+		return (1);
 	current = *head;
 	temp = *head;
 	while (temp->next != NULL)
