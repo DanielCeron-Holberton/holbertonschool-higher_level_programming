@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "lists.h"
 
 /**
@@ -11,33 +12,43 @@
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *current;
-	int sum = 0;
+	listint_t *current, *temp;
+	int sum[4096];
+	int i = 0, size_array = 0, pair = 0;
 
 	if (head == NULL || *head == NULL)
 		return (0);
-
 	current = *head;
-
-	while (current->next != NULL)
+	temp = *head;
+	while (temp->next != NULL)
 	{
-		if (current->n != current->next->n)
-			sum += current->n;
-		else
+		size_array++;
+		temp = temp->next;
+	}
+	i = 0;
+	while (current != NULL)
+	{
+		sum[i] = current->n;
+		i++;
+		current = current->next;
+	}
+	pair = (size_array / 2) + 1;
+	if (size_array % 2 != 0)
+	{
+		for (i = 0; pair >= 0; i++, size_array--, pair--)
 		{
-			sum += current->n;
-			break;
+			if (sum[i] != sum[size_array])
+				return (0);
 		}
-		current = current->next;
 	}
-
-	while (current->next != NULL)
+	else
 	{
-		current = current->next;
-		sum -= current->n;
+		while (i != size_array)
+		{
+			if (sum[i] != sum[size_array])
+				return (0);
+			i++, size_array--;
+		}
 	}
-	if (sum == 0)
-		return (1);
-
-	return (0);
+	return (1);
 }
