@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if not (isinstance(roman_string, str)):
-        return None
+    if not (isinstance(roman_string, str)) or not roman_string:
+        return 0
     value_integer = []
     dict_new = {
         'I': 1,
