@@ -1,7 +1,5 @@
 #!/usr/bin/bash
 
-from typing import final
-
 
 def safe_print_division(a, b):
     try:
