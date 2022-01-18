@@ -3,7 +3,5 @@
 
 
 class Square:
+    """Class Square created"""
     pass
-
-
-"""Class Square created"""
