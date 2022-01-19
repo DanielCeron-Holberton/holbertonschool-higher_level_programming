@@ -35,7 +35,7 @@ class Square:
         area = self.area()
         size = self.size
         for i in range(area):
-            if i % size == 0:
+            if i % size == 0 and i != 0:
                 print()
             print("#", end="")
         print()
