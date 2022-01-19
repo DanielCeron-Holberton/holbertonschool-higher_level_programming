@@ -64,7 +64,7 @@ class Square:
                 if i != 0:
                     print()
                 while position1:
-                    print("_", end="")
+                    print(" ", end="")
                     position1 -= 1
             print("#", end="")
         print()
