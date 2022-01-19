@@ -54,16 +54,17 @@ class Square:
         size=self.size
         position1 = self.position[0]
         position2 = self.position[1]
-        while position2:
-            print()
-            position2 -= 1
+        if size != 0:
+            while position2:
+                print()
+                position2 -= 1
         for i in range(area):
             position1 = self.position[0]
             if i % size == 0:
                 if i != 0:
                     print()
                 while position1:
-                    print(" ", end="")
+                    print("_", end="")
                     position1 -= 1
             print("#", end="")
         print()
