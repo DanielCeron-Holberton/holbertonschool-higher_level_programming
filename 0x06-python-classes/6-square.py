@@ -14,7 +14,6 @@ class Square:
         """Getting size attrb"""
         return self.__size
 
-
     @size.setter
     def size(self, value):
         """Setting the value for size attrb"""
@@ -40,8 +39,6 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
-
-
     def area(self):
         """Computes the area for a Square
 
@@ -53,8 +50,8 @@ class Square:
     def my_print(self):
         """prints a square
         """
-        area=self.area()
-        size=self.size
+        area = self.area()
+        size = self.size
         position1 = self.position[0]
         position2 = self.position[1]
         if size != 0:
