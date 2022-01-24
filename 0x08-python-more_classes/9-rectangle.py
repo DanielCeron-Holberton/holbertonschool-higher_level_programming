@@ -2,9 +2,6 @@
 """Create a new class called rectangle"""
 
 
-from typing import Type
-
-
 class Rectangle:
     """Rectangle Class"""
     number_of_instances = 0
