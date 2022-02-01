@@ -1,10 +1,13 @@
 #!/usr/bin/python3
+"""Creates a new class"""
 
 
 class BaseGeometry():
+    """New class with area method and integer validator"""
 
     def area(self):
-        raise Exception ("area() is not implemented")
+        raise Exception("area() is not implemented")
+
     def integer_validator(self, name, value):
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
