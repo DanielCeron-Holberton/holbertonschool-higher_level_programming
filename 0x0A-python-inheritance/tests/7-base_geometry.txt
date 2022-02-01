@@ -113,3 +113,12 @@ TypeError:  must be an integer
 Traceback (most recent call last):
 TypeError:  must be an integer
 
+>>> bg.integer_validator("", True)
+Traceback (most recent call last):
+TypeError:  must be an integer
+
+>>> bg.integer_validator("", False)
+Traceback (most recent call last):
+TypeError:  must be an integer
+
+
