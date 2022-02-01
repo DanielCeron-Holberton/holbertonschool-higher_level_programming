@@ -53,3 +53,6 @@ TypeError: age must be an integer
 
 >>> bg.integer_validator("age", 999999999999999999999999999999999)
 
+>>> bg.integer_validator("", 1)
+
+
