@@ -95,3 +95,21 @@ TypeError:  must be an integer
 Traceback (most recent call last):
 NameError: name 'NaN' is not defined
 
+>>> bg.integer_validator("", NaN)
+Traceback (most recent call last):
+NameError: name 'NaN' is not defined
+
+>>> bg.integer_validator("", float(nan))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'nan' is not defined
+
+>>> bg.integer_validator("", "")
+Traceback (most recent call last):
+TypeError:  must be an integer
+
+
+>>> bg.integer_validator("", "55843")
+Traceback (most recent call last):
+TypeError:  must be an integer
+
