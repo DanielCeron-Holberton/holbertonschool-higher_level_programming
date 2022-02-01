@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+"""Module that creates a list subclass"""
 
 
 class MyList(list):
+    """Creates a subclass"""
 
     def __init__(self):
         super().__init__()
