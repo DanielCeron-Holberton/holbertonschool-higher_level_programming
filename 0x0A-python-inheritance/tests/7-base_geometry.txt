@@ -90,3 +90,8 @@ TypeError:  must be an integer
 >>> bg.integer_validator("", (1, 2))
 Traceback (most recent call last):
 TypeError:  must be an integer
+
+>>> bg.integer_validator("", NaN)
+Traceback (most recent call last):
+NameError: name 'NaN' is not defined
+
