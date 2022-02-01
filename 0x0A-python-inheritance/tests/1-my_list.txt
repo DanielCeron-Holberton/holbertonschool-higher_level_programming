@@ -27,6 +27,9 @@ Import my_list from module
 >>> my_list.print_sorted()
 [-5, -4, -3, -2, -1]
 
+>>> print(my_list)
+[-5, -4, -3, -2, -1]
+
 >>> my_list = MyList()
 
 >>> my_list.append(4)
@@ -43,6 +46,9 @@ Import my_list from module
 >>> my_list.print_sorted()
 [1, 4, 7, 8]
 
+>>> print(my_list)
+[4, 8, 7, 1]
+
 >>> MyList.print_sorted()
 Traceback (most recent call last):
 TypeError: print_sorted() missing 1 required positional argument: 'self'
@@ -53,6 +59,9 @@ TypeError: print_sorted() missing 1 required positional argument: 'self'
 []
 
 >>> my_list.print_sorted()
+[]
+
+>>> print(my_list)
 []
 
 >>> my_list.append(-5)
@@ -70,6 +79,9 @@ TypeError: print_sorted() missing 1 required positional argument: 'self'
 
 >>> my_list.print_sorted()
 [-5, -4, -3, -2, -1]
+
+>>> print(my_list)
+[-5, -4, -3, -1, -2]
 
 >>> my_list = MyList()
 
