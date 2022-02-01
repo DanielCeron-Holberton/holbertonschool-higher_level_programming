@@ -81,6 +81,10 @@ TypeError: print_sorted() missing 1 required positional argument: 'self'
 >>> my_list.print_sorted()
 [40]
 
+>>> print(my_list)
+[40]
+
+
 
 
 
