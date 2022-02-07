@@ -79,7 +79,8 @@ class Rectangle(Base):
             print("{}".format("#" * self.width))
 
     def __str__(self):
-        return "[Rectangle] ({s.id}) {s.x}/{s.y} - {s.width}/{s.height}".format(s=self)
+        return "[Rectangle] ({s.id}) {s.x}/{s.y} - {s.width}/{s.height}".\
+            format(s=self)
 
     def update(self, *args, **kwargs):
         attr = ["id", "width", "height", "x", "y"]

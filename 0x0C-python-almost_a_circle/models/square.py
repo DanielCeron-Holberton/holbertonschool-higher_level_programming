@@ -26,7 +26,8 @@ class Square(Rectangle):
 
     def __str__(self):
         """Square subclass structure"""
-        return "[Square] ({s.id}) {s.x}/{s.y} - {s.size}".format(s=self)
+        return "[Square] ({s.id}) {s.x}/{s.y} - {s.size}".\
+            format(s=self)
 
     def update(self, *args, **kwargs):
         """Square subclass structure"""
