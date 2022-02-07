@@ -10,6 +10,7 @@ class Base():
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """Class base structure"""
         if id is not None:
             self.id = id
         else:
@@ -18,9 +19,11 @@ class Base():
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """Class base structure"""
         if list_dictionaries == {""}:
             return "[]"
         return json.dumps(list_dictionaries)
 
     def save_to_file(cls, list_objs):
+        """Class base structure"""
         list_objs.to_json_string()

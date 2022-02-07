@@ -9,6 +9,7 @@ class Rectangle(Base):
     """Rectangle subclass structure"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """Class base structure"""
         super().__init__(id)
         self.width = width
         self.height = height
@@ -17,10 +18,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """Class base structure"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """Class base structure"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -29,10 +32,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """Class base structure"""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """Class base structure"""
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -41,6 +46,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """Class base structure"""
         return self.__x
 
     @x.setter
