@@ -47,10 +47,8 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """Square subclass structure"""
-        new_dict = {
-            "id": self.id,
-            "size": self.size,
-            "x": self.x,
-            "y": self.y
-        }
+        new_dict = {}
+        new_dict.update(id=self.id, size=self.size,
+                        x=self.x, y=self.y)
+
         return new_dict

@@ -106,14 +106,8 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """New dictionary"""
-        new_dict = {
-            "id": self.id,
-            "width": self.width,
-            "height": self.width,
-            "x": self.x,
-            "y": self.y
-        }
+        new_dict = {}
+        new_dict.update(id=self.id, width=self.width,
+                        height=self.height, x=self.x, y=self.y)
 
-        # new_dict.update(id=self.id, width=self.width,
-        #                 height=self.height, x=self.x, y=self.y)
         return new_dict
