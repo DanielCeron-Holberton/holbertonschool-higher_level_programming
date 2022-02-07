@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """"""
 
-from turtle import width
+
 from models.rectangle import Rectangle
 
 
@@ -12,26 +12,37 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        return self.__width
+        return self.width
+
 
     @size.setter
     def size(self, value):
-        if type(value) is not int:
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
-        self.__width = value
-
+        self.width = value
+        self.height = value
 
     def __str__(self):
         return "[Square] ({s.id}) {s.x}/{s.y} - {s.size}".format(s=self)
+
     def update(self, *args, **kwargs):
         attr = ["id", "size", "x", "y"]
         i = 0
+        
         for arg in args:
-            if hasattr(self, arg):
+            try:
                 setattr(self, attr[i], arg)
-            i += 1
+                i += 1
+            except IndexError:
+                return
+
         for key, value in kwargs.items():
-            if hasattr(self, key):
+            if key in attr:
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        new_dict = {
+        "id": self.id,
+        "size": self.size,
+        "x": self.x,
+        "y": self.y
+        }
+        return new_dict

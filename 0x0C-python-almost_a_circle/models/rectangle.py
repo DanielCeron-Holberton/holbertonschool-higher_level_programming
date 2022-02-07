@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """"""
 
+
 from models.base import Base
 
 
@@ -60,23 +61,46 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be > 0")
         self.__y = value
+        
+        
     def area(self):
         return self.height * self.width
+    
+    
     def display(self):
         print("\n" * self.y, end="")
         for i in range(0, self.height):
             print(" " * self.x, end="")
             print("{}".format("#" * self.width))
+            
+            
     def __str__(self):
         return "[Rectangle] ({s.id}) {s.x}/{s.y} - {s.width}/{s.height}".format(s=self)
 
     def update(self, *args, **kwargs):
         attr = ["id", "width", "height", "x", "y"]
         i = 0
+
         for arg in args:
-            if hasattr(self, arg):
+            try:
                 setattr(self, attr[i], arg)
-            i += 1
+                i += 1
+            except IndexError:
+                return
+
         for key, value in kwargs.items():
-            if hasattr(self, key):
+            if key in attr:
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        new_dict = {
+            "id": self.id,
+            "width": self.width,
+            "height": self.width,
+            "x": self.x,
+            "y": self.y
+            }
+        
+        # new_dict.update(id=self.id, width=self.width,
+        #                 height=self.height, x=self.x, y=self.y)
+        return new_dict
