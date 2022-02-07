@@ -24,6 +24,25 @@ class Base():
             return "[]"
         return json.dumps(list_dictionaries)
 
+
+    @classmethod
     def save_to_file(cls, list_objs):
         """Class base structure"""
-        list_objs.to_json_string()
+        file_name = "{}.json".format(cls.__name__)
+        list_file = []
+        
+        if list_objs:
+            for obj in list_objs:
+                list_file.append(cls.to_dictionary(obj))
+            with open(file_name, "w") as f:
+                f.write(cls.to_json_string(list_file))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Class base structure"""
+        if json_string is None or len(json_string) == 0:
+            return []
+        return json.loads(json_string)
+    def create(cls, **dictionary):
+        """Class base structure"""
+        pass
