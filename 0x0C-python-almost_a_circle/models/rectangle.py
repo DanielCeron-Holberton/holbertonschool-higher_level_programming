@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-""""""
+"""Rectangle module"""
 
 
 from models.base import Base
 
 
 class Rectangle(Base):
+    """Rectangle subclass structure"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
@@ -61,19 +62,16 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be > 0")
         self.__y = value
-        
-        
+
     def area(self):
         return self.height * self.width
-    
-    
+
     def display(self):
         print("\n" * self.y, end="")
         for i in range(0, self.height):
             print(" " * self.x, end="")
             print("{}".format("#" * self.width))
-            
-            
+
     def __str__(self):
         return "[Rectangle] ({s.id}) {s.x}/{s.y} - {s.width}/{s.height}".format(s=self)
 
@@ -99,8 +97,8 @@ class Rectangle(Base):
             "height": self.width,
             "x": self.x,
             "y": self.y
-            }
-        
+        }
+
         # new_dict.update(id=self.id, width=self.width,
         #                 height=self.height, x=self.x, y=self.y)
         return new_dict
