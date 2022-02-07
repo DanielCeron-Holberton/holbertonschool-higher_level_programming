@@ -51,6 +51,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
+        """Class base structure"""
         if type(value) is not int:
             raise TypeError("x must be an integer")
         if value < 0:
@@ -59,10 +60,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """Class base structure"""
         return self.__y
 
     @y.setter
     def y(self, value):
+        """Class base structure"""
         if type(value) is not int:
             raise TypeError("y must be an integer")
         if value < 0:
@@ -70,19 +73,23 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """Class base structure"""
         return self.height * self.width
 
     def display(self):
+        """Class base structure"""
         print("\n" * self.y, end="")
         for i in range(0, self.height):
             print(" " * self.x, end="")
             print("{}".format("#" * self.width))
 
     def __str__(self):
+        """Class base structure"""
         return "[Rectangle] ({s.id}) {s.x}/{s.y} - {s.width}/{s.height}".\
             format(s=self)
 
     def update(self, *args, **kwargs):
+        """Class base structure"""
         attr = ["id", "width", "height", "x", "y"]
         i = 0
 
@@ -98,6 +105,7 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
+        """New dictionary"""
         new_dict = {
             "id": self.id,
             "width": self.width,
