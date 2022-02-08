@@ -13,6 +13,11 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
         self.size = size
 
+    def __str__(self):
+        """Square subclass structure"""
+        return "[Square] ({s.id}) {s.x}/{s.y} - {s.size}".\
+            format(s=self)
+
     @property
     def size(self):
         """Square subclass structure"""
@@ -23,11 +28,6 @@ class Square(Rectangle):
         """Square subclass structure"""
         self.width = value
         self.height = value
-
-    def __str__(self):
-        """Square subclass structure"""
-        return "[Square] ({s.id}) {s.x}/{s.y} - {s.width}".\
-            format(s=self)
 
     def update(self, *args, **kwargs):
         """Square subclass structure"""
