@@ -30,7 +30,7 @@ class Base():
         file_name = "{}.json".format(cls.__name__)
         list_file = []
 
-        if list_objs:            
+        if list_objs:
             for obj in list_objs:
                 list_file.append(cls.to_dictionary(obj))
         with open(file_name, "w") as f:
@@ -43,6 +43,30 @@ class Base():
             return []
         return json.loads(json_string)
 
+    @classmethod
     def create(cls, **dictionary):
         """Class base structure"""
-        pass
+
+        if cls.__name__ == "Square":
+            poor_dummy = cls(1)
+        else:
+            poor_dummy = cls(1, 1)
+        poor_dummy.update(**dictionary)
+        return poor_dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """Class base structure"""
+
+        file_name = "{}.json".format(cls.__name__)
+        new_list = []
+        try:
+            with open(file_name, "r") as f:
+                json_object = cls.from_json_string(f.read())
+
+            for import_class in json_object:
+                new_list.append(cls.create(**import_class))
+            return new_list
+
+        except (FileNotFoundError, TypeError):
+            return []
