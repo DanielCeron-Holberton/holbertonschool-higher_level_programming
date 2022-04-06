@@ -1,21 +1,18 @@
 #!/usr/bin/node
 
-const { argv } = require('process')
+const { argv } = require('process');
 
-let squareSize = parseInt(argv[2]);
+const squareSize = parseInt(argv[2]);
 
-let newString = "";
-
+let newString = '';
 
 if (!squareSize) {
-    console.log("Missing size");
-}
-else {
-    for (let index = 0; index < squareSize; index++) {
-        newString = newString + "X";
-    }
-    for (let index = 0; index < squareSize; index++) {
-        console.log(newString);
-
-    }
+  console.log('Missing size');
+} else {
+  for (let index = 0; index < squareSize; index++) {
+    newString = newString + 'X';
+  }
+  for (let index = 0; index < squareSize; index++) {
+    console.log(newString);
+  }
 }
