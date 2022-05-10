@@ -25,7 +25,8 @@ for row in rows:
     if row is not rows[-1]:
         print(row[0], end=', ')
     else:
-        print(row[0])
+        print(row[0], end='')
+print()
 
 cur.close()
 conn.close()
