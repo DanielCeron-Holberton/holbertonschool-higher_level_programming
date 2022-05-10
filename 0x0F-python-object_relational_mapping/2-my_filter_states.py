@@ -14,7 +14,7 @@ db = MySQLdb.connect("localhost", argv[1], argv[2], argv[3])
 cur = db.cursor()
 
 cur.execute("""SELECT * FROM states
-                WHERE name = '{:s}'
+                WHERE name LIKE '{:s}'
                 ORDER BY id ASC""".format(argv[4]))
 
 rows = cur.fetchall()
