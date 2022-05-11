@@ -11,7 +11,7 @@ class State(Base):
     """Creates a class representing a state object"""
 
     __tablename__ = 'State'
-    id = Column(Integer(),
+    id = Column(Integer(11),
                 primary_key=True,
                 nullable=False,
                 autoincrement=True)
