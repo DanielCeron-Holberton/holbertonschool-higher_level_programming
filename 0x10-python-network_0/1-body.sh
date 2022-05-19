@@ -1,3 +1,3 @@
 #!/bin/bash
 # script that curl to a redirection
-curl -L "$1"
+curl -sL GET "$1"
