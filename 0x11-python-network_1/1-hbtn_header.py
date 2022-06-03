@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Module that fetch an URL"""
 
-
 import urllib.request
 from sys import argv
 
