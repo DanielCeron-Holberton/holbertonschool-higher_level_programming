@@ -1,9 +1,5 @@
 #!/usr/bin/python3
-"""
-Takes in a URL, sends a request to the URL
-and displays the value of the X-Request-Id Header
-in the console
-"""
+"""Module that fetch an URL"""
 
 
 import urllib.request
