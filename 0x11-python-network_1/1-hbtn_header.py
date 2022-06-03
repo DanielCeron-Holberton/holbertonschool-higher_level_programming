@@ -6,8 +6,8 @@ in the console
 """
 
 
-from sys import argv
 import urllib.request
+from sys import argv
 
 url_var = argv[1]
 
