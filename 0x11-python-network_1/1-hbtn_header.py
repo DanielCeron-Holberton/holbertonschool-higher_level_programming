@@ -9,8 +9,7 @@ in the console
 import urllib.request
 from sys import argv
 
-url_var = argv[1]
 
-request = urllib.request.Request(url_var)
+request = urllib.request.Request(argv[1])
 with urllib.request.urlopen(request) as response:
     print(response.headers.get('X-Request-Id'))
