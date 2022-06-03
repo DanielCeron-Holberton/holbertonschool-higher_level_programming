@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Please list 10 commits (from the most recent to oldest) of the repository “rails” by the user “rails”
+Please list 10 commits (from the most recent to oldest)
+of the repository “rails” by the user “rails”
 """
 if __name__ == '__main__':
     import requests
