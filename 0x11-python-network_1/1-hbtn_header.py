@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-"""Module that make a request
-    """
+"""
+Takes in a URL, sends a request to the URL
+and displays the value of the X-Request-Id Header.
+"""
+
 
 from sys import argv
 import urllib.request
