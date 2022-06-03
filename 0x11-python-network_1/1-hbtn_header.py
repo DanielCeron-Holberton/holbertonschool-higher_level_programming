@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Module that takes in a URL, sends a request to the URL"""
+"""Module that takes in a URL,
+    sends a request to the URL"""
 
 
 from sys import argv
