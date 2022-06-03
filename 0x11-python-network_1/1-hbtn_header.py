@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-"""Module that takes in a URL,
-    sends a request to the URL"""
-
+"""Module that make a request
+    """
 
 from sys import argv
 import urllib.request
